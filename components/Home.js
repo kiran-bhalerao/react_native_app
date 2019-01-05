@@ -1,13 +1,46 @@
 import React from 'react'
-import { StyleSheet, Button, Text, View } from 'react-native'
-import MyCarousel from './MyCarousel';
+import { StyleSheet, Text, View } from 'react-native'
+import MyCarousel from '../components/MyCarousel'
+import {
+  Container,
+  Header,
+  Left,
+  Body,
+  Right,
+  Button,
+  Icon,
+  Title
+} from 'native-base'
+import { DrawerActions } from 'react-navigation'
 
 class Home extends React.Component {
+  state = {
+    business: [
+      {
+        id: 'WpIAc9by5iU',
+        title: 'ECommerce'
+      },
+      {
+        id: 'sNPnbI1arSE',
+        title: 'FinTech'
+      },
+      {
+        id: 'VOgFZfRVaww',
+        title: 'Food'
+      },
+      {
+        id: 'VOgFZfRVqww',
+        title: 'Health'
+      }
+    ]
+  }
   render() {
+    // alert(!!this.props.navigation)
     return (
-      <View style={styles.container}>
-        <MyCarousel />
-      </View>
+      <MyCarousel
+        title={'Featured Business Categories'}
+        data={this.state.business}
+      />
     )
   }
 }
