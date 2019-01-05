@@ -7,25 +7,24 @@ class Home extends React.Component {
     business: [
       {
         id: 'WpIAc9by5iU',
-        thumbnail: require('../assets/img/location_1.jpg'),
         title: 'ECommerce'
       },
       {
         id: 'sNPnbI1arSE',
-        thumbnail: require('../assets/img/location_2.jpg'),
         title: 'FinTech'
       },
       {
         id: 'VOgFZfRVaww',
-        thumbnail: require('../assets/img/location_3.jpg'),
         title: 'Food'
       },
       {
         id: 'VOgFZfRVqww',
-        thumbnail: require('../assets/img/location_4.jpg'),
         title: 'Health'
       }
     ]
+  }
+  _toggleDrawer = ()=>{
+    this.props.navigation.toggleDrawer();
   }
   render() {
     return (

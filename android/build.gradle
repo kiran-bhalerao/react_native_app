@@ -8,6 +8,7 @@ buildscript {
         targetSdkVersion = 26
         supportLibVersion = "27.1.1"
     }
+    ext.kotlin_version = '1.1.1'
     repositories {
         google()
         jcenter()
@@ -22,6 +23,14 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+    jcenter()
+    maven {
+        url 'https://mvnrepository.com/artifact/com.android.tools.lint/lint-gradle-api'
+    }
         mavenLocal()
         google()
         jcenter()

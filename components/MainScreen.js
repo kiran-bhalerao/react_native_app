@@ -5,6 +5,7 @@ import Home from './Home'
 import { createBottomTabNavigator } from 'react-navigation'
 import About from './About'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { NavigationActions } from 'react-navigation';
 
 const RootStack = createBottomTabNavigator(
   {
@@ -31,7 +32,7 @@ const RootStack = createBottomTabNavigator(
   }
 )
 
-class AppStack extends React.Component {
+class MainScreen extends React.Component {
   static navigationOptions = {
     headerTitle: 'App Name',
     headerStyle: {
@@ -44,7 +45,7 @@ class AppStack extends React.Component {
         size={26}
         color='#fff'
         style={{ marginRight: 10 }}
-        onPress={() => alert('This is a button')}
+        onPress={() => alert(NavigationActions.toggleDrawer())}
       />
     )
   }
@@ -53,4 +54,4 @@ class AppStack extends React.Component {
   }
 }
 
-export default AppStack
+export default MainScreen
