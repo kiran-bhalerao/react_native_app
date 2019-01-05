@@ -8,7 +8,7 @@ const slideWidth = 280
 const sliderWidth = Dimensions.get('window').width
 const itemWidth = slideWidth + horizontalMargin * 2
 const itemHeight = 200
-const data = ['a','b']
+const data = ['a', 'b']
 const styles = StyleSheet.create({
   slide: {
     width: itemWidth,
@@ -35,7 +35,7 @@ class MyCarousel extends React.Component {
   render() {
     return (
       <Carousel
-      data={data}
+        data={data}
         renderItem={this._renderItem}
         sliderWidth={sliderWidth}
         itemWidth={itemWidth}
