@@ -4,53 +4,60 @@ import { StyleSheet, Text, Button, View } from 'react-native'
 import Home from './Home'
 import { createBottomTabNavigator } from 'react-navigation'
 import About from './About'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { NavigationActions } from 'react-navigation';
+import Tab3 from './Tab3'
+import Tab4 from './Tab4'
+import Tab5 from './Tab5'
 
-const RootStack = createBottomTabNavigator(
+const TabStack = createBottomTabNavigator(
   {
     Home,
-    About
+    About,
+    Tab3,
+    Tab4,
+    Tab5
   },
   {
-    navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, horizontal, tintColor }) => {
-        const { routeName } = navigation.state
-        let iconName
-        if (routeName === 'Home') {
-          iconName = `home`
-        } else if (routeName === 'About') {
-          iconName = `information`
-        }
-        return <Icon name={iconName} size={26} color={tintColor} />
-      }
-    }),
-    tabBarOptions: {
-      activeTintColor: '#4BC24E',
-      inactiveTintColor: '#7f7f7f'
+    navigationOptions: {
+      tabBarVisible: false
     }
+    // navigationOptions: ({ navigation }) => ({
+    //   tabBarIcon: ({ focused, horizontal, tintColor }) => {
+    //     const { routeName } = navigation.state
+    //     let iconName
+    //     if (routeName === 'Home') {
+    //       iconName = `home`
+    //     } else if (routeName === 'About') {
+    //       iconName = `information`
+    //     }
+    //     return <Icon name={iconName} size={26} color={tintColor} />
+    //   }
+    // }),
+    // tabBarOptions: {
+    //   activeTintColor: '#4BC24E',
+    //   inactiveTintColor: '#7f7f7f'
+    // }
   }
 )
 
 class MainScreen extends React.Component {
-  static navigationOptions = {
-    headerTitle: 'App Name',
-    headerStyle: {
-      backgroundColor: '#8668ff'
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <Icon
-        name='dots-vertical'
-        size={26}
-        color='#fff'
-        style={{ marginRight: 10 }}
-        onPress={() => alert(NavigationActions.toggleDrawer())}
-      />
-    )
-  }
+  // static navigationOptions = {
+  //   headerTitle: 'App Name.',
+  //   headerStyle: {
+  //     backgroundColor: '#8668ff'
+  //   },
+  //   headerTintColor: '#fff',
+  //   headerRight: (
+  //     <Icon
+  //       name='dots-vertical'
+  //       size={26}
+  //       color='#fff'
+  //       style={{ marginRight: 10 }}
+  //       onPress={() => alert(NavigationActions.toggleDrawer())}
+  //     />
+  //   )
+  // }
   render() {
-    return <RootStack />
+    return <TabStack />
   }
 }
 

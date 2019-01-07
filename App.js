@@ -1,13 +1,12 @@
 import React from 'react'
 import MyDrawerNavigator from './components/MyDrawerNavigator'
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const AppStackNavigator = createStackNavigator({
-	main: {
-		screen: MyDrawerNavigator,
-		navigationOptions: { header: null }
-	}
+  main: {
+    screen: MyDrawerNavigator,
+    navigationOptions: { header: null }
+  }
 })
 // navigationOptions: ({navigation})=>{
 // 			return {
@@ -29,9 +28,9 @@ const AppStackNavigator = createStackNavigator({
 // 		}
 
 class App extends React.Component {
-	render() {
-		return <AppStackNavigator />
-	}
+  render() {
+    return <AppStackNavigator />
+  }
 }
 
 export default App

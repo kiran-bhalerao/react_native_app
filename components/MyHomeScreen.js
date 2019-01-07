@@ -32,7 +32,10 @@ class MyHomeScreen extends React.Component {
     // return <AppStackNavigator />
     return (
       <Container>
-        <CustomHeader _toggleDrawer={this._toggleDrawer} />
+        <CustomHeader
+          _toggleDrawer={this._toggleDrawer}
+          navigation={this.props.navigation}
+        />
         <MainScreen />
       </Container>
     )

@@ -21,17 +21,17 @@ const styles = StyleSheet.create({
     width: slideWidth,
     flex: 1,
     backgroundColor: '#4BC24E',
-    borderRadius: 20,
+    borderRadius: 20
     // other styles for the inner container
   }
 })
 
-class MyCarousel extends React.Component {
+class CustomCarousel extends React.Component {
   _renderItem({ item, index }) {
     return (
       <View style={styles.slide}>
         <View style={styles.slideInnerContainer}>
-        {/*<Text>{item.title}</Text>*/}
+          {/*<Text>{item.title}</Text>*/}
         </View>
       </View>
     )
@@ -48,9 +48,9 @@ class MyCarousel extends React.Component {
         sliderWidth={sliderWidth}
         itemWidth={itemWidth}
         layout={'default'}
-        autoplay={true}
-        firstItem = {2}
-        loop={true}
+        // autoplay={true}
+        firstItem={parseInt(this.props.data.length / 2)}
+        // loop={true}
         // layout={'tinder'}
         // layoutCardOffset={18}
       />
@@ -58,4 +58,4 @@ class MyCarousel extends React.Component {
   }
 }
 
-export default MyCarousel
+export default CustomCarousel

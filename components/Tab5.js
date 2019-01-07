@@ -3,7 +3,7 @@ import { StyleSheet, Button, Text, View } from 'react-native'
 import CustomChart from './CustomChart'
 import CustomTab from './CustomTab'
 
-class About extends React.Component {
+class Tab5 extends React.Component {
   _isTabActive = () => {
     return !this.props.navigation.state.index
   }
@@ -20,7 +20,7 @@ class About extends React.Component {
           <CustomTab
             navigation={this.props.navigation}
             _isTabActive={this._isTabActive}
-            iconsName={'about'}
+            iconsName={'tab5'}
           />
         </View>
       </View>
@@ -28,7 +28,7 @@ class About extends React.Component {
   }
 }
 
-export default About
+export default Tab5
 
 const styles = StyleSheet.create({
   container: {
