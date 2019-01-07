@@ -26,8 +26,8 @@ const RootStack = createBottomTabNavigator(
       }
     }),
     tabBarOptions: {
-      activeTintColor: '#8668ff',
-      inactiveTintColor: '#d4ccff'
+      activeTintColor: '#4BC24E',
+      inactiveTintColor: '#7f7f7f'
     }
   }
 )

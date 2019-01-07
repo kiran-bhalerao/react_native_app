@@ -1,8 +1,11 @@
 import React from 'react'
-import { Image, Button, StyleSheet } from 'react-native'
+import { View } from 'react-native'
+import { Image, StyleSheet } from 'react-native'
 import MainScreen from './MainScreen'
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
-
+import { DrawerActions } from 'react-navigation'
+import CustomHeader from './CustomHeader'
+import { Container } from 'native-base'
 // const AppStackNavigator = createStackNavigator({
 //   main: {
 //     screen: MainScreen,
@@ -22,11 +25,16 @@ class MyHomeScreen extends React.Component {
       />
     )
   }
-
+  _toggleDrawer = () => {
+    this.props.navigation.openDrawer()
+  }
   render() {
     // return <AppStackNavigator />
     return (
-      <MainScreen />
+      <Container>
+        <CustomHeader _toggleDrawer={this._toggleDrawer} />
+        <MainScreen />
+      </Container>
     )
   }
 }

@@ -37,10 +37,13 @@ class Home extends React.Component {
   render() {
     // alert(!!this.props.navigation)
     return (
+     <View>
       <MyCarousel
         title={'Featured Business Categories'}
         data={this.state.business}
       />
+      <Text>section II</Text>
+     </View>
     )
   }
 }

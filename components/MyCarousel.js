@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   slideInnerContainer: {
     width: slideWidth,
     flex: 1,
-    backgroundColor: '#fcc9cf',
+    backgroundColor: '#4BC24E',
     borderRadius: 20,
     // other styles for the inner container
   }
@@ -31,7 +31,7 @@ class MyCarousel extends React.Component {
     return (
       <View style={styles.slide}>
         <View style={styles.slideInnerContainer}>
-        <Text>{item.title}</Text>
+        {/*<Text>{item.title}</Text>*/}
         </View>
       </View>
     )

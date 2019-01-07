@@ -8,9 +8,12 @@
     "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
   },
   "dependencies": {
+    "feather-icons-react": "^0.3.0",
     "native-base": "^2.10.0",
     "react": "16.6.3",
+    "react-feather": "^1.1.5",
     "react-native": "0.57.8",
+    "react-native-chart-kit": "^1.2.1",
     "react-native-elements": "^0.19.1",
     "react-native-responsive-fontsize": "^0.1.7",
     "react-native-snap-carousel": "^3.7.5",
