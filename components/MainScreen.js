@@ -34,7 +34,7 @@ const RootStack = createBottomTabNavigator(
 
 class MainScreen extends React.Component {
   static navigationOptions = {
-    headerTitle: 'App Name',
+    headerTitle: 'App Name.',
     headerStyle: {
       backgroundColor: '#8668ff'
     },
