@@ -14,6 +14,7 @@ class About extends React.Component {
       <View style={styles.container}>
         <View style={styles.topSection}>
           <Text>section TOP</Text>
+          <CustomChart />
         </View>
         <View style={styles.bottomSection}>
           <Text>section BOTTOM</Text>
