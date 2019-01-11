@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Button, Text, View } from 'react-native'
-import CustomChart from './CustomChart'
-import CustomTab from './CustomTab'
+import CustomChart from '../custom_components/CustomChart'
+import CustomTab from '../custom_components/CustomTab'
 
 class Tab3 extends React.Component {
   _isTabActive = () => {

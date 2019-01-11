@@ -29,12 +29,12 @@ class CustomChart extends React.Component {
               }
             ]
           }}
-          width={Dimensions.get('window').width} // from react-native
-          height={220}
+          width={Dimensions.get('window').width - 40} // from react-native
+          height={200}
           chartConfig={{
-			// backgroundColor: 'transparent',
-            backgroundGradientFrom: '#629dfc',
-            backgroundGradientTo: '#ffa726',
+            // backgroundColor: 'transparent',
+            backgroundGradientFrom: '#6EA2ED',
+            backgroundGradientTo: '#7245D2',
             decimalPlaces: 2, // optional, defaults to 2dp
             color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
             style: {

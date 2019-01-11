@@ -1,5 +1,5 @@
 import React from 'react'
-import MyDrawerNavigator from './components/MyDrawerNavigator'
+import MyDrawerNavigator from './components/screen_components/MyDrawerNavigator'
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
 
 const AppStackNavigator = createStackNavigator({

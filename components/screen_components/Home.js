@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
-import CustomCarousel from './CustomCarousel'
+import CustomCarousel from '../custom_components/CustomCarousel'
 import { DrawerActions } from 'react-navigation'
-import CustomTab from './CustomTab'
+import CustomTab from '../custom_components/CustomTab'
 
 class Home extends React.Component {
   // state = {

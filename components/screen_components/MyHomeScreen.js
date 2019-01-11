@@ -4,7 +4,7 @@ import { Image, StyleSheet } from 'react-native'
 import MainScreen from './MainScreen'
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
 import { DrawerActions } from 'react-navigation'
-import CustomHeader from './CustomHeader'
+import CustomHeader from '../custom_components/CustomHeader'
 import { Container } from 'native-base'
 // const AppStackNavigator = createStackNavigator({
 //   main: {

@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyleSheet, Button, Text, View } from 'react-native'
-import CustomChart from './CustomChart'
-import CustomTab from './CustomTab'
+import CustomChart from '../custom_components/CustomChart'
+import CustomTab from '../custom_components/CustomTab'
 
-class Tab5 extends React.Component {
+class About extends React.Component {
   _isTabActive = () => {
     return !this.props.navigation.state.index
   }
@@ -14,13 +14,14 @@ class Tab5 extends React.Component {
       <View style={styles.container}>
         <View style={styles.topSection}>
           <Text>section TOP</Text>
+          <CustomChart />
         </View>
         <View style={styles.bottomSection}>
           <Text>section BOTTOM</Text>
           <CustomTab
             navigation={this.props.navigation}
             _isTabActive={this._isTabActive}
-            iconsName={'tab5'}
+            iconsName={'about'}
           />
         </View>
       </View>
@@ -28,7 +29,7 @@ class Tab5 extends React.Component {
   }
 }
 
-export default Tab5
+export default About
 
 const styles = StyleSheet.create({
   container: {
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
   topSection: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   bottomSection: {
     // flexDirection: 'column',

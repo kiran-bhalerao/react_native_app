@@ -20,7 +20,7 @@ class CustomHeader extends React.Component {
         </View>
         <View style={styles.container2}>
           <Text style={styles.batteryText}>0%</Text>
-          <Icon name='battery-charging-full' size={26} color='#f71820' />
+          <Icon name='battery-charging-full' size={26} />
         </View>
       </View>
     )
@@ -54,8 +54,8 @@ const styles = {
     paddingLeft: 20
   },
   batteryText: {
-    fontSize: 15,
-    fontWeight: 'bold'
+    fontSize: 16,
+    fontWeight: 'light'
   }
 }
 
