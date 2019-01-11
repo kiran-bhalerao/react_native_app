@@ -52,7 +52,7 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#F9FBFF',
     paddingRight: 20,
     height: 50,
     paddingLeft: 20

@@ -6,31 +6,9 @@ import CustomTab from '../custom_components/CustomTab'
 import Image from 'react-native-remote-svg'
 
 class Home extends React.Component {
-  // state = {
-  //   business: [
-  //     {
-  //       id: 'WpIAc9by5iU',
-  //       title: 'ECommerce'
-  //     },
-  //     {
-  //       id: 'sNPnbI1arSE',
-  //       title: 'FinTech'
-  //     },
-  //     {
-  //       id: 'VOgFZfRVaww',
-  //       title: 'Food'
-  //     },
-  //     {
-  //       id: 'VOgFZfRVqww',
-  //       title: 'Health'
-  //     }
-  //   ]
-  // }
-  _isTabActive = () => {
-    return !this.props.navigation.state.index
-  }
+  _isTabActive = () => !this.props.navigation.state.index
+
   render() {
-    // alert(!!this.props.navigation)
     return (
       <View style={styles.container}>
         <ScrollView
@@ -45,11 +23,11 @@ class Home extends React.Component {
                 </View>
                 <View style={styles.leftSectionMoistureContainer}>
                   <View style={styles.rightMoisture}>
-                    <Text>80%</Text>
+                    <Text style={styles.moisturePercentageText}>80%</Text>
                     <Image source={require('../../assets/svg/red_dot.svg')} />
                   </View>
                   <View style={styles.leftMoisture}>
-                    <Text>73%</Text>
+                    <Text style={styles.moisturePercentageText}>73%</Text>
                     <Image source={require('../../assets/svg/red_dot.svg')} />
                   </View>
                 </View>
@@ -66,7 +44,7 @@ class Home extends React.Component {
                   <Text style={styles.moistureTitle}>Moisture</Text>
                 </View>
                 <View style={styles.rightSectionMoisture}>
-                  <Text>78%</Text>
+                  <Text style={styles.moisturePercentageText}>78%</Text>
                   <Image source={require('../../assets/svg/red_dot.svg')} />
                 </View>
               </View>
@@ -76,6 +54,7 @@ class Home extends React.Component {
               <Image source={require('../../assets/svg/off_status.svg')} />
             </View>
             <View style={styles.otherFactor}>
+              <Text style={styles.otherFactorTitle}>Other Factors</Text>
               <Text>Other Factors</Text>
             </View>
           </View>
@@ -97,7 +76,7 @@ export default Home
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FBFF',
+    backgroundColor: '#FFF',
     alignItems: 'center',
     justifyContent: 'space-between'
     // backgroundColor: 'yellow'
@@ -155,7 +134,7 @@ const styles = StyleSheet.create({
   },
   moistureTitleContainer: {
     marginTop: 160,
-    marginLeft: 16,
+    marginLeft: 16
     // backgroundColor: 'pink'
   },
   moistureTitle: {
@@ -178,22 +157,37 @@ const styles = StyleSheet.create({
     height: 65,
     width: '100%',
     marginTop: 20,
-    backgroundColor: 'white',
+    backgroundColor: '#F9FBFF',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingLeft: 20,
+    paddingLeft: 10,
     paddingRight: 20,
     alignItems: 'center'
   },
   pumpStatusText: {
     color: '#B5B5B5',
-    fontSize: 18
+    fontSize: 18,
+    fontFamily: 'Nunito-Regular'
   },
   otherFactor: {
     height: 140,
     width: '100%',
     marginTop: 10,
     marginBottom: 20,
-    backgroundColor: '#8103D5'
+    // backgroundColor: '#9052FC'
+    // backgroundColor: '#533FD0'
+    backgroundColor: '#5748ED'
+    // backgroundColor: '#6B51EB'
+  },
+  otherFactorTitle: {
+    fontFamily: 'Nunito-Regular',
+    fontSize: 18,
+    color: '#FFF',
+    marginLeft: 10,
+    marginTop: 10,
+
+  },
+  moisturePercentageText: {
+    fontFamily: 'Nunito-Light',
   }
 })

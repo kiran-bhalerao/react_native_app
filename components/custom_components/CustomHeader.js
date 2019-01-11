@@ -32,7 +32,7 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#F9FBFF',
+    backgroundColor: '#FFF',
     paddingRight: 14,
     paddingLeft: 14
   },
