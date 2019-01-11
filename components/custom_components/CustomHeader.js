@@ -1,7 +1,6 @@
 import React from 'react'
 import { Image, Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import CustomIcon from './CustomIcon'
 
 class CustomHeader extends React.Component {
   render() {

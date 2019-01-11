@@ -4,6 +4,15 @@ import CustomCarousel from '../custom_components/CustomCarousel'
 import { DrawerActions } from 'react-navigation'
 import CustomTab from '../custom_components/CustomTab'
 import Image from 'react-native-remote-svg'
+import * as Animatable from 'react-native-animatable'
+
+Animatable.initializeRegistryWithDefinitions({
+  FancyPulseAnimation: {
+    0: { scale: 0.4 },
+    0.5: { scale: 0.9 },
+    1: { scale: 0.4 }
+  }
+})
 
 class Home extends React.Component {
   _isTabActive = () => !this.props.navigation.state.index
@@ -24,11 +33,27 @@ class Home extends React.Component {
                 <View style={styles.leftSectionMoistureContainer}>
                   <View style={styles.rightMoisture}>
                     <Text style={styles.moisturePercentageText}>80%</Text>
-                    <Image source={require('../../assets/svg/red_dot.svg')} />
+                    <Animatable.View
+                      animation="FancyPulseAnimation"
+                      easing="ease-out"
+                      iterationCount="infinite"
+                      style={{ textAlign: 'center' }}
+                      duration={2000}
+                    >
+                      <Image source={require('../../assets/svg/red_dot.svg')} />
+                    </Animatable.View>
                   </View>
                   <View style={styles.leftMoisture}>
                     <Text style={styles.moisturePercentageText}>73%</Text>
-                    <Image source={require('../../assets/svg/red_dot.svg')} />
+                    <Animatable.View
+                      animation="FancyPulseAnimation"
+                      easing="ease-out"
+                      iterationCount="infinite"
+                      style={{ textAlign: 'center' }}
+                      duration={2000}
+                    >
+                      <Image source={require('../../assets/svg/red_dot.svg')} />
+                    </Animatable.View>
                   </View>
                 </View>
               </View>
@@ -45,7 +70,15 @@ class Home extends React.Component {
                 </View>
                 <View style={styles.rightSectionMoisture}>
                   <Text style={styles.moisturePercentageText}>78%</Text>
-                  <Image source={require('../../assets/svg/red_dot.svg')} />
+                  <Animatable.View
+                    animation="FancyPulseAnimation"
+                    easing="ease-out"
+                    iterationCount="infinite"
+                    style={{ textAlign: 'center' }}
+                    duration={2000}
+                  >
+                    <Image source={require('../../assets/svg/red_dot.svg')} />
+                  </Animatable.View>
                 </View>
               </View>
             </View>
@@ -142,7 +175,7 @@ const styles = StyleSheet.create({
     fontWeight: '800'
   },
   rightSectionMoisture: {
-    marginTop: 65,
+    marginTop: 63,
     marginLeft: 20,
     // backgroundColor: 'yellow',
     flexDirection: 'row'
@@ -184,10 +217,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#FFF',
     marginLeft: 10,
-    marginTop: 10,
-
+    marginTop: 10
   },
   moisturePercentageText: {
-    fontFamily: 'Nunito-Light',
+    fontFamily: 'Nunito-Light'
   }
 })
