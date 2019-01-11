@@ -19,8 +19,8 @@ class CustomHeader extends React.Component {
           <Text style={styles.title}>SICCA</Text>
         </View>
         <View style={styles.container2}>
-          <Text style={styles.batteryText}>0%</Text>
-          <Icon name='battery-charging-full' size={26} />
+          <Text style={styles.batteryText}>89%</Text>
+          <Icon name='battery-full' size={24} />
         </View>
       </View>
     )
@@ -32,14 +32,14 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#F9FBFF',
     paddingRight: 14,
     paddingLeft: 14
   },
   container2: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fff'
+    // backgroundColor: '#fff'
     // backgroundColor: 'pink'
   },
   titleContainer: {
@@ -55,7 +55,7 @@ const styles = {
   },
   batteryText: {
     fontSize: 16,
-    fontWeight: 'light'
+    fontWeight: '100'
   }
 }
 

@@ -15,6 +15,7 @@
     "react-native": "0.57.8",
     "react-native-chart-kit": "^1.2.1",
     "react-native-elements": "^0.19.1",
+    "react-native-remote-svg": "^1.4.0",
     "react-native-responsive-fontsize": "^0.1.7",
     "react-native-snap-carousel": "^3.7.5",
     "react-native-svg": "^8.0.10",
