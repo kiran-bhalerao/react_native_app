@@ -1,6 +1,7 @@
 import React from 'react'
-import { Image, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import Image from 'react-native-remote-svg'
 
 class CustomHeader extends React.Component {
   render() {
@@ -8,9 +9,9 @@ class CustomHeader extends React.Component {
       <View style={styles.container}>
         <View style={styles.container2}>
           <Icon
-            name='menu'
+            name="menu"
             size={26}
-            color='#7f7f7f'
+            color="#7f7f7f"
             onPress={() => this.props._toggleDrawer()}
           />
         </View>
@@ -19,7 +20,11 @@ class CustomHeader extends React.Component {
         </View>
         <View style={styles.container2}>
           <Text style={styles.batteryText}>89%</Text>
-          <Icon name='battery-full' size={24} />
+          {/*<Icon name="battery-full" size={24} />*/}
+          <Image
+            source={require('../../assets/svg/battery.svg')}
+            style={styles.batteryIcon}
+          />
         </View>
       </View>
     )
@@ -37,24 +42,25 @@ const styles = {
   },
   container2: {
     flexDirection: 'row',
-    alignItems: 'center',
-    // backgroundColor: '#fff'
-    // backgroundColor: 'pink'
+    alignItems: 'center'
   },
   titleContainer: {
-    height: 70,
+    height: 60,
     justifyContent: 'center'
   },
   title: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
     color: 'black',
-    // backgroundColor: 'pink',
     paddingLeft: 20
   },
   batteryText: {
     fontSize: 16,
     fontWeight: '100'
+  },
+  batteryIcon: {
+    height: 24,
+    width: 24
   }
 }
 

@@ -1,5 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  ImageBackground,
+  Dimensions
+} from 'react-native'
 import CustomCarousel from '../custom_components/CustomCarousel'
 import { DrawerActions } from 'react-navigation'
 import CustomTab from '../custom_components/CustomTab'
@@ -9,7 +16,7 @@ import * as Animatable from 'react-native-animatable'
 Animatable.initializeRegistryWithDefinitions({
   FancyPulseAnimation: {
     0: { scale: 0.4 },
-    0.5: { scale: 0.9 },
+    0.5: { scale: 1.2 },
     1: { scale: 0.4 }
   }
 })
@@ -24,8 +31,21 @@ class Home extends React.Component {
           style={{ width: '100%' }}
           showsVerticalScrollIndicator={false}
         >
+          <View style={styles.topHeader}>
+            <View style={styles.topHeaderLeftSection}>
+              <Text style={styles.moistureTitle}>Soil Moisture</Text>
+              <Text style={styles.moistureSubTitle}>Current soil moisture</Text>
+            </View>
+            <View style={styles.topHeaderRightSection}>
+              {/*<Text>Right</Text>*/}
+            </View>
+          </View>
           <View style={styles.topSection}>
-            <View style={styles.topContainer}>
+            <ImageBackground
+              source={require('../../assets/img/ground.png')}
+              style={styles.topContainer}
+              imageStyle={{ resizeMode: 'contain', marginTop: 188 }}
+            >
               <View style={styles.leftSection}>
                 <View style={styles.leftSectionRulerContainer}>
                   <Image source={require('../../assets/svg/ruler.svg')} />
@@ -64,10 +84,6 @@ class Home extends React.Component {
                 />
               </View>
               <View style={styles.rightSection}>
-                <View style={styles.moistureTitleContainer}>
-                  <Text style={styles.moistureTitle}>Soil</Text>
-                  <Text style={styles.moistureTitle}>Moisture</Text>
-                </View>
                 <View style={styles.rightSectionMoisture}>
                   <Text style={styles.moisturePercentageText}>78%</Text>
                   <Animatable.View
@@ -81,15 +97,14 @@ class Home extends React.Component {
                   </Animatable.View>
                 </View>
               </View>
-            </View>
-            <View style={styles.pumpStatus}>
-              <Text style={styles.pumpStatusText}>Current Pump Status</Text>
-              <Image source={require('../../assets/svg/off_status.svg')} />
-            </View>
-            <View style={styles.otherFactor}>
-              <Text style={styles.otherFactorTitle}>Other Factors</Text>
-              <Text>Other Factors</Text>
-            </View>
+            </ImageBackground>
+          </View>
+          <View style={styles.pumpStatus}>
+            <Text style={styles.pumpStatusText}>Current Pump Status</Text>
+            <Image source={require('../../assets/svg/off_status.svg')} />
+          </View>
+          <View style={styles.otherFactor}>
+            <Text style={styles.otherFactorTitle}>Other Factors</Text>
           </View>
         </ScrollView>
         <View style={styles.bottomSection}>
@@ -125,6 +140,8 @@ const styles = StyleSheet.create({
   topContainer: {
     flexDirection: 'row',
     width: '100%',
+    paddingBottom: 10,
+    // backgroundColor: 'pink',
     justifyContent: 'space-evenly'
   },
   leftSection: {
@@ -140,7 +157,7 @@ const styles = StyleSheet.create({
     margin: 0
   },
   leftSectionRulerContainer: {
-    paddingLeft: 12,
+    paddingLeft: 8,
     marginTop: 180,
     width: '40%'
   },
@@ -165,17 +182,20 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 80
   },
-  moistureTitleContainer: {
-    marginTop: 160,
-    marginLeft: 16
-    // backgroundColor: 'pink'
-  },
   moistureTitle: {
     fontSize: 20,
-    fontWeight: '800'
+    fontWeight: '800',
+    marginLeft: 20,
+    color: 'black'
+  },
+  moistureSubTitle: {
+    fontSize: 16,
+    fontWeight: '300',
+    marginLeft: 20,
+    color: '#B5B4B4'
   },
   rightSectionMoisture: {
-    marginTop: 63,
+    marginTop: 278,
     marginLeft: 20,
     // backgroundColor: 'yellow',
     flexDirection: 'row'
@@ -187,9 +207,9 @@ const styles = StyleSheet.create({
     // justifyContent: 'space-between'
   },
   pumpStatus: {
-    height: 65,
+    height: 60,
     width: '100%',
-    marginTop: 20,
+    marginTop: 8,
     backgroundColor: '#F9FBFF',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -205,7 +225,7 @@ const styles = StyleSheet.create({
   otherFactor: {
     height: 140,
     width: '100%',
-    marginTop: 10,
+    marginTop: 8,
     marginBottom: 20,
     // backgroundColor: '#9052FC'
     // backgroundColor: '#533FD0'
@@ -220,6 +240,22 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   moisturePercentageText: {
-    fontFamily: 'Nunito-Light'
+    fontFamily: 'Nunito-Light',
+    color: '#fff'
+  },
+  topHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    // marginBottom: 10
+  },
+  topHeaderLeftSection: {
+    // backgroundColor: 'pink',
+    width: '49.9%'
+  },
+  topHeaderRightSection: {
+    // backgroundColor: 'orange',
+    width: '49.9%',
+    flexDirection: 'row',
+    justifyContent: 'flex-end'
   }
 })
