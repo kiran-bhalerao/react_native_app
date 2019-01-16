@@ -1,12 +1,19 @@
 import React from 'react'
 import MyDrawerNavigator from './components/screen_components/MyDrawerNavigator'
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
+import Login from './components/screen_components/Login'
 
 const AppStackNavigator = createStackNavigator({
   main: {
     screen: MyDrawerNavigator,
     navigationOptions: { header: null }
+  },
+  login: {
+    screen: Login,
+    navigationOptions: { header: null }
   }
+},{
+  initialRouteName: 'login',
 })
 // navigationOptions: ({navigation})=>{
 // 			return {

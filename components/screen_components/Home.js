@@ -10,6 +10,8 @@ import {
 import CustomCarousel from '../custom_components/CustomCarousel'
 import { DrawerActions } from 'react-navigation'
 import CustomTab from '../custom_components/CustomTab'
+import FactorCard from '../reusable_components/FactorCard'
+
 import Image from 'react-native-remote-svg'
 import * as Animatable from 'react-native-animatable'
 
@@ -44,7 +46,11 @@ class Home extends React.Component {
             <ImageBackground
               source={require('../../assets/img/ground.png')}
               style={styles.topContainer}
-              imageStyle={{ resizeMode: 'contain', marginTop: 188 }}
+              imageStyle={{
+                resizeMode: 'cover',
+                marginTop: 188,
+                width: '100%'
+              }}
             >
               <View style={styles.leftSection}>
                 <View style={styles.leftSectionRulerContainer}>
@@ -54,9 +60,9 @@ class Home extends React.Component {
                   <View style={styles.rightMoisture}>
                     <Text style={styles.moisturePercentageText}>80%</Text>
                     <Animatable.View
-                      animation="FancyPulseAnimation"
-                      easing="ease-out"
-                      iterationCount="infinite"
+                      animation='FancyPulseAnimation'
+                      easing='ease-out'
+                      iterationCount='infinite'
                       style={{ textAlign: 'center' }}
                       duration={2000}
                     >
@@ -66,9 +72,9 @@ class Home extends React.Component {
                   <View style={styles.leftMoisture}>
                     <Text style={styles.moisturePercentageText}>73%</Text>
                     <Animatable.View
-                      animation="FancyPulseAnimation"
-                      easing="ease-out"
-                      iterationCount="infinite"
+                      animation='FancyPulseAnimation'
+                      easing='ease-out'
+                      iterationCount='infinite'
                       style={{ textAlign: 'center' }}
                       duration={2000}
                     >
@@ -79,7 +85,7 @@ class Home extends React.Component {
               </View>
               <View style={{ width: '38%' }}>
                 <Image
-                  source={require('../../assets/svg/plant_lg.svg')}
+                  source={require('../../assets/svg/plant_lg_white.svg')}
                   style={{ marginTop: 1 }}
                 />
               </View>
@@ -87,9 +93,9 @@ class Home extends React.Component {
                 <View style={styles.rightSectionMoisture}>
                   <Text style={styles.moisturePercentageText}>78%</Text>
                   <Animatable.View
-                    animation="FancyPulseAnimation"
-                    easing="ease-out"
-                    iterationCount="infinite"
+                    animation='FancyPulseAnimation'
+                    easing='ease-out'
+                    iterationCount='infinite'
                     style={{ textAlign: 'center' }}
                     duration={2000}
                   >
@@ -105,6 +111,11 @@ class Home extends React.Component {
           </View>
           <View style={styles.otherFactor}>
             <Text style={styles.otherFactorTitle}>Other Factors</Text>
+            <View style={styles.factorContainer}>
+              <FactorCard icon={0} title='Humidity' data={64} />
+              <FactorCard icon={1} title='Temperature' data={44} />
+              <FactorCard icon={2} title='Soil Temp' data={34} />
+            </View>
           </View>
         </ScrollView>
         <View style={styles.bottomSection}>
@@ -227,10 +238,16 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 8,
     marginBottom: 20,
+
     // backgroundColor: '#9052FC'
     // backgroundColor: '#533FD0'
-    backgroundColor: '#5748ED'
-    // backgroundColor: '#6B51EB'
+    // backgroundColor: '#5748ED'
+    backgroundColor: '#6B51EB'
+  },
+  factorContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginTop: 14
   },
   otherFactorTitle: {
     fontFamily: 'Nunito-Regular',
@@ -245,7 +262,7 @@ const styles = StyleSheet.create({
   },
   topHeader: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-evenly'
     // marginBottom: 10
   },
   topHeaderLeftSection: {
