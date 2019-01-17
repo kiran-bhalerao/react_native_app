@@ -3,15 +3,22 @@ import { Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Image from 'react-native-remote-svg'
 
+import * as actions from '../redux/actions'
+import { connect } from 'react-redux'
+
 class CustomHeader extends React.Component {
+  componentWillMount = () => {
+    this.props.fetchData()
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.container2}>
           <Icon
-            name="menu"
+            name='menu'
             size={26}
-            color="#7f7f7f"
+            color='#7f7f7f'
             onPress={() => this.props._toggleDrawer()}
           />
         </View>
@@ -19,7 +26,7 @@ class CustomHeader extends React.Component {
           <Text style={styles.title}>SICCA</Text>
         </View>
         <View style={styles.container2}>
-          <Text style={styles.batteryText}>89%</Text>
+          <Text style={styles.batteryText}>{this.props.battery + '%'}</Text>
           {/*<Icon name="battery-full" size={24} />*/}
           <Image
             source={require('../../assets/svg/battery.svg')}
@@ -30,6 +37,12 @@ class CustomHeader extends React.Component {
     )
   }
 }
+
+const mapStateToProps = state => ({ ...state.siccaData })
+export default connect(
+  mapStateToProps,
+  actions
+)(CustomHeader)
 
 const styles = {
   container: {
@@ -63,5 +76,3 @@ const styles = {
     width: 24
   }
 }
-
-export default CustomHeader

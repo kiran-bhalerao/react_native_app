@@ -16,7 +16,7 @@ class FactorCard extends React.Component {
       <View style={styles.container}>
         <View style={styles.iconContainer}>
           <Image source={this.state.iconSrc[this.props.icon]} />
-          <Text style={styles.dataText}>{this.props.data}%</Text>
+          <Text style={styles.dataText}>{this.props.data}</Text>
         </View>
         <Text style={styles.titleText}>{this.props.title}</Text>
       </View>

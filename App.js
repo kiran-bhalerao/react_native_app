@@ -1,20 +1,30 @@
 import React from 'react'
-import MyDrawerNavigator from './components/screen_components/MyDrawerNavigator'
+import MyDrawerNavigator from './src/screens/MyDrawerNavigator'
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
-import Login from './components/screen_components/Login'
+import Login from './src/screens/Login'
+import Signup from './src/screens/Signup'
+import { Provider } from 'react-redux'
+import store from './src/redux/store'
 
-const AppStackNavigator = createStackNavigator({
-  main: {
-    screen: MyDrawerNavigator,
-    navigationOptions: { header: null }
+const AppStackNavigator = createStackNavigator(
+  {
+    main: {
+      screen: MyDrawerNavigator,
+      navigationOptions: { header: null }
+    },
+    login: {
+      screen: Login,
+      navigationOptions: { header: null }
+    },
+    signup: {
+      screen: Signup,
+      navigationOptions: { header: null }
+    }
   },
-  login: {
-    screen: Login,
-    navigationOptions: { header: null }
+  {
+    initialRouteName: 'login'
   }
-},{
-  initialRouteName: 'login',
-})
+)
 // navigationOptions: ({navigation})=>{
 // 			return {
 // 			title: 'App Name',
@@ -36,7 +46,11 @@ const AppStackNavigator = createStackNavigator({
 
 class App extends React.Component {
   render() {
-    return <AppStackNavigator />
+    return (
+      <Provider store={store}>
+        <AppStackNavigator />
+      </Provider>
+    )
   }
 }
 

@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 import CustomTab from '../custom_components/CustomTab'
 import Image from 'react-native-remote-svg'
-import THEME from '../APP_Theme'
+import THEME from '../Theme.app'
 
 class Login extends React.Component {
   state = {
@@ -24,70 +24,79 @@ class Login extends React.Component {
         <Text
           style={{
             marginTop: 20,
-            fontSize: 20,
+            fontSize: 22,
             fontWeight: '800',
             color: '#000'
           }}
         >
-          SICCA APP
+          LOGIN
         </Text>
         <View style={styles.topSection}>
-{/*          <ScrollView
+          {/*          <ScrollView
             style={{
               width: '100%'
             }}
             contentContainerStyle={{ justifyContent: 'center', marginTop: 20 }}
             showsVerticalScrollIndicator={false}
           >*/}
-            <View style={styles.topSectionContainer}>
-              <View
+          <View style={styles.topSectionContainer}>
+            <View
+              style={{
+                width: 140,
+                height: 140,
+                borderRadius: 20,
+                backgroundColor: '#EBEBEB',
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginBottom: 20
+              }}
+            >
+              <Text>Logo</Text>
+            </View>
+            <TextInput
+              style={styles.inputText}
+              autoFocus={true}
+              autoCorrect={false}
+              autoCapitalize='none'
+              placeholder='username'
+              placeholderTextColor='#A4A4A4'
+              underlineColorAndroid='transparent'
+              onChangeText={username => this.setState({ username })}
+              value={this.state.username}
+            />
+            <TextInput
+              style={styles.inputText}
+              secureTextEntry={true}
+              autoCorrect={false}
+              autoCapitalize='none'
+              placeholder='password'
+              placeholderTextColor='#A4A4A4'
+              underlineColorAndroid='transparent'
+              onChangeText={password => this.setState({ password })}
+              value={this.state.password}
+            />
+            <TouchableWithoutFeedback
+              onPress={() => this.props.navigation.navigate('main')}
+            >
+              <View style={styles.loginButton}>
+                <Text style={{ color: '#fff' }}>LOGIN</Text>
+              </View>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={() => this.props.navigation.navigate('signup')}
+            >
+              <Text
                 style={{
-                  width: 140,
-                  height: 140,
-                  borderRadius: 20,
-                  backgroundColor: '#EBEBEB',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginBottom: 20
+                  marginTop: 14,
+                  fontSize: 16,
+                  color: THEME.COLOR,
+                  fontFamily: 'Nunito-Regular'
                 }}
               >
-                <Text>Logo</Text>
-              </View>
-              <TextInput
-                style={styles.inputText}
-                autoFocus={true}
-                autoCorrect={false}
-                autoCapitalize={false}
-                placeholder="username"
-                placeholderTextColor="#A4A4A4"
-                underlineColorAndroid="transparent"
-                onChangeText={username => this.setState({ username })}
-                value={this.state.username}
-              />
-              <TextInput
-                style={styles.inputText}
-                secureTextEntry={true}
-                autoCorrect={false}
-                autoCapitalize={false}
-                placeholder="password"
-                placeholderTextColor="#A4A4A4"
-                underlineColorAndroid="transparent"
-                onChangeText={password => this.setState({ password })}
-                value={this.state.password}
-              />
-              <TouchableWithoutFeedback
-                onPress={() => this.props.navigation.navigate('main')}
-              >
-                <View style={styles.loginButton}>
-                  <Text style={{ color: '#fff' }}>LOGIN</Text>
-                </View>
-              </TouchableWithoutFeedback>
-              <TouchableWithoutFeedback
-                onPress={() => alert('hey')}
-              >
-              <Text style={{marginTop: 14, fontSize: 16,color: THEME.COLOR}}>create an account</Text>
-              </TouchableWithoutFeedback>
-            </View>
+                Create an account, signup !
+              </Text>
+            </TouchableWithoutFeedback>
+          </View>
           {/*</ScrollView>*/}
         </View>
         <View style={styles.bottomSection}>
@@ -103,7 +112,7 @@ class Login extends React.Component {
           >
             <Text
               style={{
-                fontSize: 14,
+                fontSize: 13,
                 color: '#EBEBEB',
                 fontFamily: 'Nunito-Regular'
               }}
@@ -132,7 +141,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    marginTop: 30,
+    marginTop: 30
   },
   bottomSection: {
     // flexDirection: 'column',
