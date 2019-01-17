@@ -82,6 +82,11 @@ class Login extends React.Component {
                   <Text style={{ color: '#fff' }}>LOGIN</Text>
                 </View>
               </TouchableWithoutFeedback>
+              <TouchableWithoutFeedback
+                onPress={() => alert('hey')}
+              >
+              <Text style={{marginTop: 14, fontSize: 16,color: THEME.COLOR}}>create an account</Text>
+              </TouchableWithoutFeedback>
             </View>
           {/*</ScrollView>*/}
         </View>
@@ -126,7 +131,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    width: '100%'
+    width: '100%',
+    marginTop: 30,
   },
   bottomSection: {
     // flexDirection: 'column',
@@ -158,6 +164,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     borderRadius: 30,
     justifyContent: 'center',
-    zIndex: 999
+    zIndex: 999,
+    fontSize: 16
   }
 })
