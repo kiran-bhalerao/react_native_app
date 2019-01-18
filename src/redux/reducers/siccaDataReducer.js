@@ -12,7 +12,7 @@ const INITAIL_STATE = {
   battery: ''
 }
 
-const returnHighSoilTemp = action => {
+const getHighSoilTemp = action => {
   return (action.payload.ST1 > action.payload.ST2
     ? action.payload.ST1
     : action.payload.ST2) > action.payload.ST3
@@ -32,7 +32,7 @@ export default (state = INITAIL_STATE, action) => {
         soilMoistureTwo: action.payload.SM2,
         soilMoistureThree: action.payload.SM3,
         humidity: action.payload.Humidity,
-        soilTemp: returnHighSoilTemp(action),
+        soilTemp: getHighSoilTemp(action),
         temp: action.payload.Temp,
         pumpStatus: action.payload.Pump_status,
         battery: action.payload.Battery
